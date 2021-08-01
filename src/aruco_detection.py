@@ -35,15 +35,13 @@ for iname in glob.glob(r"../data/Aruco_Markers/Sample_Images/*.jpg"):
             rot_matrix, jac = cv2.Rodrigues(rvec)
             print("\nROTATION >\n{}".format(rot_matrix))
 
-            ax.scatter(*tvec[0])
-
+            ax.scatter(*tvec[0], zdir='y')
 
     cv2.imshow('QueryImage', QueryImg)
-    # cv2.waitKey(0)
 
     ax.set_xlim(-100, 100)
-    ax.set_ylim(-100, 100)
-    ax.set_zlim(0, 1000)
+    ax.set_ylim(0, 1000)
+    ax.set_zlim(-100, 100)
     plt.show()
 
     cv2.waitKey(0)
